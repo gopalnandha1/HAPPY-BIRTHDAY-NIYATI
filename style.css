@@ -1,0 +1,1333 @@
+/* =========================================================
+   PASTEL FLOWER + LAVENDER BIRTHDAY WEBSITE
+   FINAL STYLE.CSS
+========================================================= */
+
+
+/* =========================================================
+   1. VARIABLES
+========================================================= */
+
+:root {
+    --lavender: #d9c8eb;
+    --lavender-dark: #8064a2;
+    --purple: #6d548b;
+
+    --pink: #f2d4df;
+    --pink-dark: #c98fa6;
+
+    --cream: #fffaf7;
+    --white: #ffffff;
+
+    --text: #514955;
+    --muted: #827985;
+
+    --border: rgba(128, 100, 162, 0.18);
+
+    --shadow:
+        0 15px 40px rgba(85, 65, 100, 0.12);
+
+    --radius: 24px;
+}
+
+
+/* =========================================================
+   2. RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    font-family: "Poppins", sans-serif;
+
+    color: var(--text);
+
+    background: var(--cream);
+
+    line-height: 1.7;
+
+    overflow-x: hidden;
+}
+
+button {
+    font-family: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+section {
+    position: relative;
+}
+
+
+/* =========================================================
+   3. COMMON CONTAINER
+========================================================= */
+
+.container {
+    width: min(1100px, 90%);
+
+    margin: 0 auto;
+}
+
+section {
+    padding: 100px 0;
+}
+
+.section-label {
+    text-align: center;
+
+    color: var(--purple);
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 12px;
+}
+
+.section-title {
+    text-align: center;
+
+    font-family: "DM Serif Display", serif;
+
+    font-size: clamp(38px, 6vw, 60px);
+
+    font-weight: 400;
+
+    line-height: 1.2;
+
+    color: #51445a;
+
+    margin-bottom: 20px;
+}
+
+.section-title span {
+    color: var(--lavender-dark);
+}
+
+.section-description {
+    max-width: 600px;
+
+    margin: 0 auto 45px;
+
+    text-align: center;
+
+    color: var(--muted);
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   4. MUSIC BUTTON
+========================================================= */
+
+.music-button {
+    position: fixed;
+
+    top: 20px;
+    right: 20px;
+
+    z-index: 1000;
+
+    width: 48px;
+    height: 48px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    color: var(--purple);
+
+    font-size: 21px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(80, 60, 100, 0.12);
+
+    backdrop-filter: blur(10px);
+
+    transition: 0.3s ease;
+}
+
+.music-button:hover {
+    transform: scale(1.08);
+
+    background: var(--lavender);
+}
+
+.music-button:active {
+    transform: scale(0.95);
+}
+
+
+/* =========================================================
+   5. FLOATING FLOWERS
+========================================================= */
+
+.floating-flower {
+    position: fixed;
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    opacity: 0.45;
+
+    font-size: 25px;
+
+    animation:
+        floatingFlower 6s ease-in-out infinite;
+}
+
+.flower-1 {
+    top: 18%;
+    left: 5%;
+}
+
+.flower-2 {
+    top: 42%;
+    right: 5%;
+
+    animation-delay: 1.5s;
+}
+
+.flower-3 {
+    bottom: 20%;
+    left: 7%;
+
+    animation-delay: 3s;
+}
+
+.flower-4 {
+    bottom: 10%;
+    right: 8%;
+
+    animation-delay: 4s;
+}
+
+@keyframes floatingFlower {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-18px)
+            rotate(8deg);
+    }
+}
+
+
+/* =========================================================
+   6. HERO SECTION
+========================================================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(242, 212, 223, 0.65),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 30%,
+            rgba(217, 200, 235, 0.7),
+            transparent 32%
+        ),
+
+        linear-gradient(
+            135deg,
+            #fffaf7,
+            #f8f1fb
+        );
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(217, 200, 235, 0.22);
+
+    top: -220px;
+    right: -150px;
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(242, 212, 223, 0.25);
+
+    bottom: -170px;
+    left: -130px;
+}
+
+.hero-content {
+    position: relative;
+
+    z-index: 5;
+
+    width: 100%;
+
+    max-width: 800px;
+
+    animation:
+        heroAppear 1.2s ease forwards;
+}
+
+@keyframes heroAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+.small-text {
+    color: var(--muted);
+
+    font-size: 14px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 18px;
+}
+
+.flower-icon {
+    font-size: 55px;
+
+    margin-bottom: 10px;
+
+    animation:
+        flowerIcon 3s ease-in-out infinite;
+}
+
+@keyframes flowerIcon {
+
+    0%,
+    100% {
+        transform:
+            rotate(-4deg)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            rotate(5deg)
+            scale(1.06);
+    }
+}
+
+.hero h1 {
+    font-family: "DM Serif Display", serif;
+
+    font-size:
+        clamp(52px, 9vw, 100px);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    color: #55465e;
+
+    margin-bottom: 5px;
+}
+
+.hero h2 {
+    font-family: "Great Vibes", cursive;
+
+    font-size:
+        clamp(50px, 8vw, 85px);
+
+    font-weight: 400;
+
+    line-height: 1.2;
+
+    color: var(--lavender-dark);
+
+    margin-bottom: 10px;
+}
+
+.hero-date {
+    display: inline-block;
+
+    padding: 6px 18px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(217, 200, 235, 0.45);
+
+    color: var(--purple);
+
+    font-size: 14px;
+
+    margin-bottom: 22px;
+}
+
+.hero-message {
+    max-width: 550px;
+
+    margin: 0 auto 30px;
+
+    color: var(--muted);
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   7. PRIMARY BUTTON
+========================================================= */
+
+.primary-button {
+    border: none;
+
+    padding: 13px 28px;
+
+    border-radius: 40px;
+
+    background:
+        var(--lavender-dark);
+
+    color: var(--white);
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px
+        rgba(128, 100, 162, 0.25);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.primary-button:hover {
+    transform: translateY(-3px);
+
+    background: var(--purple);
+
+    box-shadow:
+        0 14px 30px
+        rgba(128, 100, 162, 0.3);
+}
+
+.primary-button:active {
+    transform: scale(0.96);
+}
+
+.primary-button:disabled {
+    cursor: default;
+
+    opacity: 0.75;
+}
+
+
+/* =========================================================
+   8. SCROLL HINT
+========================================================= */
+
+.scroll-hint {
+    position: absolute;
+
+    z-index: 5;
+
+    bottom: 25px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    color: var(--lavender-dark);
+
+    font-size: 25px;
+
+    animation:
+        scrollHint 1.8s ease-in-out infinite;
+}
+
+@keyframes scrollHint {
+
+    0%,
+    100% {
+        transform:
+            translate(-50%, 0);
+
+        opacity: 0.5;
+    }
+
+    50% {
+        transform:
+            translate(-50%, 10px);
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   9. MESSAGE SECTION
+========================================================= */
+
+.message-section {
+    background: var(--cream);
+}
+
+.message-card {
+    max-width: 700px;
+
+    margin: 45px auto 0;
+
+    padding: 50px 45px;
+
+    text-align: center;
+
+    background: var(--white);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.message-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 20px 45px
+        rgba(85, 65, 100, 0.15);
+}
+
+.message-card p {
+    color: var(--muted);
+
+    font-size: 15px;
+
+    margin: 20px 0;
+}
+
+.card-flower {
+    font-size: 32px;
+}
+
+
+/* =========================================================
+   10. MEMORIES
+========================================================= */
+
+.memories-section {
+    background:
+        linear-gradient(
+            180deg,
+            #faf5fc,
+            #fffaf7
+        );
+}
+
+.photo-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+
+    margin-top: 45px;
+}
+
+.photo-card {
+    position: relative;
+
+    min-height: 330px;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    background: var(--white);
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.photo-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 20px 45px
+        rgba(85, 65, 100, 0.18);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+
+    min-height: 330px;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.6s ease;
+}
+
+.photo-card:hover img {
+    transform: scale(1.05);
+}
+
+.photo-caption {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding:
+        50px 25px 22px;
+
+    color: var(--white);
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(40, 30, 45, 0.78)
+        );
+}
+
+.photo-caption span {
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    opacity: 0.85;
+}
+
+.photo-caption h3 {
+    font-family:
+        "DM Serif Display", serif;
+
+    font-size: 23px;
+
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   11. LETTER SECTION
+========================================================= */
+
+.letter-section {
+    background: var(--cream);
+}
+
+.letter-card {
+    max-width: 700px;
+
+    margin: 45px auto 0;
+
+    padding: 55px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #faf5fc
+        );
+
+    border:
+        1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+}
+
+.letter-top {
+    text-align: center;
+
+    font-size: 34px;
+
+    margin-bottom: 25px;
+}
+
+.letter-card h3 {
+    font-family:
+        "Great Vibes", cursive;
+
+    font-size: 40px;
+
+    font-weight: 400;
+
+    color: var(--lavender-dark);
+
+    margin-bottom: 20px;
+}
+
+.letter-card p {
+    color: var(--muted);
+
+    margin-bottom: 18px;
+}
+
+.letter-signature {
+    margin-top: 30px;
+
+    font-family:
+        "Great Vibes", cursive;
+
+    font-size: 30px;
+
+    color: var(--purple);
+}
+
+
+/* =========================================================
+   12. CAKE SECTION
+========================================================= */
+
+.cake-section {
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #f8f0fb,
+            #fffaf7 65%
+        );
+}
+
+.cake-container {
+    position: relative;
+
+    width: 300px;
+    height: 250px;
+
+    margin:
+        50px auto 25px;
+}
+
+
+/* =========================================================
+   13. CAKE
+========================================================= */
+
+.cake {
+    position: absolute;
+
+    left: 50%;
+    bottom: 20px;
+
+    width: 220px;
+
+    transform:
+        translateX(-50%);
+}
+
+.cake-top {
+    position: relative;
+
+    z-index: 3;
+
+    width: 220px;
+    height: 45px;
+
+    background: #e9c6d3;
+
+    border-radius: 50%;
+}
+
+.cake-body {
+    position: relative;
+
+    z-index: 2;
+
+    width: 200px;
+    height: 75px;
+
+    margin: -10px auto 0;
+
+    background:
+        linear-gradient(
+            #d9b0c0,
+            #c997aa
+        );
+
+    border-radius: 10px;
+}
+
+.cake-bottom {
+    position: relative;
+
+    z-index: 1;
+
+    width: 210px;
+    height: 35px;
+
+    margin: -5px auto 0;
+
+    background: #b98ca1;
+
+    border-radius:
+        0 0 15px 15px;
+}
+
+.cake-decoration {
+    position: absolute;
+
+    z-index: 5;
+
+    top: 22px;
+
+    left: 0;
+    right: 0;
+
+    font-size: 18px;
+
+    letter-spacing: 8px;
+}
+
+
+/* =========================================================
+   14. CANDLES
+========================================================= */
+
+.candles {
+    position: absolute;
+
+    z-index: 10;
+
+    top: 35px;
+    left: 50%;
+
+    display: flex;
+
+    gap: 25px;
+
+    transform:
+        translateX(-50%);
+}
+
+.candle {
+    position: relative;
+
+    width: 13px;
+    height: 55px;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #d8c9ed 0px,
+            #d8c9ed 8px,
+            #f3d5df 8px,
+            #f3d5df 16px
+        );
+
+    border-radius: 5px;
+}
+
+.flame {
+    position: absolute;
+
+    top: -20px;
+    left: 50%;
+
+    width: 14px;
+    height: 20px;
+
+    transform:
+        translateX(-50%);
+
+    background: #f3b95f;
+
+    border-radius:
+        50% 50% 50% 50%;
+
+    box-shadow:
+        0 0 12px
+        rgba(243, 185, 95, 0.8);
+
+    animation:
+        flameMove 0.8s
+        ease-in-out
+        infinite alternate;
+}
+
+@keyframes flameMove {
+
+    from {
+        transform:
+            translateX(-50%)
+            scale(1);
+    }
+
+    to {
+        transform:
+            translateX(-50%)
+            scale(0.8);
+    }
+}
+
+.candle.flame-out .flame {
+    display: none;
+}
+
+
+/* =========================================================
+   15. WISH MESSAGE
+========================================================= */
+
+.wish-message {
+    display: none;
+
+    margin-top: 25px;
+
+    color: var(--purple);
+
+    font-family:
+        "Great Vibes", cursive;
+
+    font-size: 30px;
+}
+
+.wish-message.show {
+    display: block;
+
+    animation:
+        wishAppear 0.8s ease forwards;
+}
+
+@keyframes wishAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   16. FINAL SECTION
+========================================================= */
+
+.final-section {
+    min-height: 80vh;
+
+    display: flex;
+
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(242, 212, 223, 0.5),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(217, 200, 235, 0.65),
+            transparent 35%
+        ),
+
+        #f8f1fb;
+}
+
+.final-section h2 {
+    font-family:
+        "DM Serif Display", serif;
+
+    font-size:
+        clamp(36px, 6vw, 60px);
+
+    font-weight: 400;
+
+    color: #55465e;
+}
+
+.final-section h1 {
+    font-family:
+        "Great Vibes", cursive;
+
+    font-size:
+        clamp(55px, 9vw, 90px);
+
+    font-weight: 400;
+
+    color: var(--lavender-dark);
+
+    margin-bottom: 20px;
+}
+
+.final-section p {
+    max-width: 550px;
+
+    margin: 0 auto;
+
+    color: var(--muted);
+}
+
+.final-message {
+    margin-top: 35px;
+
+    font-family:
+        "Great Vibes", cursive;
+
+    font-size: 30px;
+
+    line-height: 1.7;
+
+    color: var(--purple);
+}
+
+.final-flowers {
+    margin: 20px 0;
+
+    font-size: 30px;
+
+    letter-spacing: 4px;
+}
+
+
+/* =========================================================
+   17. FOOTER
+========================================================= */
+
+footer {
+    padding: 30px 20px;
+
+    text-align: center;
+
+    background: #eee5f5;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+footer strong {
+    color: var(--purple);
+}
+
+
+/* =========================================================
+   18. SCROLL REVEAL
+========================================================= */
+
+.reveal {
+    opacity: 0;
+
+    transform:
+        translateY(30px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   19. FLOWER PETALS
+========================================================= */
+
+.petal {
+    position: fixed;
+
+    z-index: 9999;
+
+    pointer-events: none;
+
+    font-size: 18px;
+
+    animation:
+        petalFall 1.5s ease forwards;
+}
+
+@keyframes petalFall {
+
+    0% {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1)
+            rotate(0deg);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translateY(100px)
+            scale(0.4)
+            rotate(180deg);
+    }
+}
+
+
+/* =========================================================
+   20. TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+    section {
+        padding: 75px 0;
+    }
+
+    .photo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .message-card {
+        padding: 40px 25px;
+    }
+
+    .letter-card {
+        padding: 40px 25px;
+    }
+
+    .floating-flower {
+        font-size: 20px;
+
+        opacity: 0.3;
+    }
+
+    .photo-card {
+        min-height: 300px;
+    }
+
+    .photo-card img {
+        min-height: 300px;
+    }
+}
+
+
+/* =========================================================
+   21. MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    section {
+        padding: 65px 0;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    .music-button {
+        width: 42px;
+        height: 42px;
+
+        top: 15px;
+        right: 15px;
+    }
+
+    .hero {
+        min-height: 100svh;
+
+        padding:
+            70px 18px;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .hero h2 {
+        font-size: 55px;
+    }
+
+    .small-text {
+        font-size: 13px;
+    }
+
+    .hero-message {
+        font-size: 13px;
+    }
+
+    .section-title {
+        font-size: 39px;
+    }
+
+    .section-description {
+        font-size: 13px;
+    }
+
+    .message-card {
+        padding:
+            30px 20px;
+    }
+
+    .message-card p {
+        font-size: 14px;
+    }
+
+    .letter-card {
+        padding:
+            30px 22px;
+    }
+
+    .letter-card h3 {
+        font-size: 35px;
+    }
+
+    .letter-card p {
+        font-size: 14px;
+    }
+
+    .cake-container {
+        transform:
+            scale(0.85);
+
+        margin-top: 30px;
+
+        margin-bottom: 5px;
+    }
+
+    .final-section {
+        min-height: 90vh;
+    }
+
+    .final-section h1 {
+        font-size: 58px;
+    }
+
+    .final-message {
+        font-size: 27px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+
+}
+
+
+/* =========================================================
+   22. ACCESSIBILITY
+========================================================= */
+
+button:focus-visible {
+    outline:
+        3px solid
+        rgba(128, 100, 162, 0.35);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   23. REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+
+        transition: none !important;
+    }
+}
